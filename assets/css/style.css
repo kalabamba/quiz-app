@@ -1,0 +1,209 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #202124;
+}
+.btn_start,
+.quiz_box,
+.score_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.btn_start button{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fafafa;
+    background-color: #171717;
+    border: none;
+}
+.btn_start button:hover {
+    color:#fafafa;
+    background: #303134;
+}
+.btn_start.hide {
+    display: none;
+    pointer-events: none;
+}
+.quiz_box.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.quiz_box {
+    width: 480px;   
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transition: transform none;
+    background-color: #303134;
+}
+.quiz_box header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #171717;
+    color: #fafafa;
+}
+.quiz_box header .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+.quiz_box .question_text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fafafa;
+}
+/* timer */
+.quiz_box header .timer {
+    display:flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fafafa;
+    background-color: #303134;
+    border-radius: 3px;
+    padding: 5px 8px;
+}
+.quiz_box header .timer .time_second {
+    color: #fafafa;
+    background-color: #171717;
+    border-radius: 3px;
+    padding: 2px 5px;
+    text-align: center;
+    width: 25px;
+}
+
+.quiz_box .option_list {
+    padding: 18px 0;
+}
+.quiz_box .option_list .option {
+    border: 1px solid #151d3b;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #fafafa;
+    
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.quiz_box .option_list .option:hover {
+    color: #112b2c;
+    background: #ffd33d;
+}
+.quiz_box .option_list .option.correct {
+    color:#155724;
+    background:#d4edda;
+}
+.quiz_box .option_list .option.incorrect {
+    color: #721c24;
+    background: #f8d7da;
+}
+
+/* quizbox footer */
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+}
+.card-footer .btn_next{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fafafa;
+}
+.card-footer .btn_next.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.card-footer .question_counter{
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: #fafafa;
+    background-color: #171717;
+    border-radius: 3px;
+    padding: 5px 8px;
+}
+
+/* score_box */
+.score_box {
+    background-color: #303134;
+    width: 480px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transition: transform none !important;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.score_box.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.score_box header {
+    align-self: flex-start;
+    width: 100%;
+    background-color: #171717;
+    color: #fafafa;
+}
+.score_box header .title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+.score_box .card-body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+}
+.score_box .icon i{
+    font-size: 75px;
+    color: #ffd33d;
+    margin-bottom: 20px;
+}
+
+.score_box .score_text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fafafa;
+    margin-bottom: 25px;
+}
+.score_box .buttons {
+    display:flex;
+    justify-content: center;
+    gap:20px;
+}
+.score_box .buttons button {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fafafa;
+}
+
+/* mediaquery */
+@media (max-width: 480px) {
+    .quiz_box {
+        width: 95%;
+    }
+    .score_box {
+        width: 95%;
+    }
+}
